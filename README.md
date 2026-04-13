@@ -88,15 +88,15 @@ flowchart TD
 
 ## Demo
 
-![Recommender Output](Image/imageoutput.jpg)
+![Recommender Output](image/imageoutput.jpg)
 
 ## Stress Test Results
 
 ### User 1 (Lofi Chill)
-![User1](Image/user1.jpg)
+![User1](image/user1.jpg)
 
 ### User 2 (High Energy Pop)
-![User2](Image/user2.jpg)
+![User2](image/user2.jpg)
 
 ## Step 2: Accuracy and Surprises
 
@@ -106,6 +106,17 @@ The top song ranked first because it received the highest score from the scoring
 
 For other users, the recommendations were less accurate because most songs only matched energy and not genre or mood. This shows that the system depends heavily on genre and mood to give better recommendations.
 
+## Step 3: Data Experiment
+
+I tested the system by removing the mood feature from the scoring function.
+
+After commenting out the mood check, the rankings changed. For example, for User 1 (Lofi Chill), "Focus Flow" became the top recommendation instead of "Midnight Coding". This happened because the system no longer considered mood, and only used genre and energy similarity.
+
+The scores also became lower overall since the +1.0 mood bonus was removed.
+
+The results felt less accurate because mood is an important part of music preference. Without it, the system could not distinguish between songs with similar energy but different moods.
+
+This experiment shows that mood plays a significant role in improving recommendation quality.
 ---
 
 ## Getting Started
