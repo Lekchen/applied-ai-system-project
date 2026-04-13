@@ -4,6 +4,7 @@
 
 Give your model a short, descriptive name.  
 Example: **VibeFinder 1.0**  
+**VibeMatch 1.0**
 
 ---
 
@@ -16,6 +17,7 @@ Prompts:
 - What kind of recommendations does it generate  
 - What assumptions does it make about the user  
 - Is this for real users or classroom exploration  
+This recommender suggests songs based on a user’s preferred genre, mood, and energy level. It assumes that users know their preferences and want songs with similar characteristics. This system is designed for classroom exploration, not for real users.
 
 ---
 
@@ -31,6 +33,7 @@ Prompts:
 - What changes did you make from the starter logic  
 
 Avoid code here. Pretend you are explaining the idea to a friend who does not program.
+The model uses features like genre, mood, and energy from each song. It compares these with the user’s preferences. If the genre matches, it adds 2 points, and if the mood matches, it adds 1 point. It also calculates how close the song’s energy is to the user’s preferred energy. All these values are combined to create a score, and songs with the highest scores are recommended.
 
 ---
 
@@ -44,7 +47,7 @@ Prompts:
 - What genres or moods are represented  
 - Did you add or remove data  
 - Are there parts of musical taste missing in the dataset  
-
+The dataset contains 18 songs from songs.csv. Each song includes features such as genre, mood, energy, tempo, valence, danceability, and acousticness. The dataset includes a limited range of genres and moods, so it does not represent all types of music. Some user preferences may not be well covered.
 ---
 
 ## 5. Strengths  
@@ -56,7 +59,7 @@ Prompts:
 - User types for which it gives reasonable results  
 - Any patterns you think your scoring captures correctly  
 - Cases where the recommendations matched your intuition  
-
+The system works well for users whose preferences match the available data, such as Lofi Chill users. It correctly prioritizes songs that match both genre and mood. The scoring system is simple and easy to understand, which makes the recommendations transparent.
 ---
 
 ## 6. Limitations and Bias 
@@ -91,6 +94,14 @@ Prompts:
 
 No need for numeric metrics unless you created some.
 
+I tested the recommender system using multiple user profiles, including Lofi Chill, High Energy Pop, Sad Rock, and an edge case with unusual preferences. I looked at the top recommended songs and checked whether they matched the user’s genre, mood, and energy preferences.
+
+For the Lofi Chill user, the results felt accurate because the top songs matched both genre and mood, and had similar energy levels. However, for other users, many recommendations were based mostly on energy similarity, which made them feel less personalized.
+
+One surprising result was that some songs kept appearing for different users, even when their preferences were very different. This happened because the system relies heavily on energy similarity, especially when genre and mood do not match.
+
+Overall, the system works well when there are strong matches in genre and mood, but performs worse when those features do not align.
+
 ---
 
 ## 8. Future Work  
@@ -103,7 +114,7 @@ Prompts:
 - Better ways to explain recommendations  
 - Improving diversity among the top results  
 - Handling more complex user tastes  
-
+I would improve the model by adding more songs to increase diversity. I would also include more features like tempo and valence in the scoring. Additionally, I would try to balance the recommendations so the same songs do not appear for different users.
 ---
 
 ## 9. Personal Reflection  
@@ -115,3 +126,4 @@ Prompts:
 - What you learned about recommender systems  
 - Something unexpected or interesting you discovered  
 - How this changed the way you think about music recommendation apps  
+I learned how recommender systems use simple rules to turn user preferences into predictions. One interesting thing I discovered is how much the system depends on certain features like genre and energy. This project helped me understand that real music apps are much more complex and need better data and algorithms to give accurate recommendations.
