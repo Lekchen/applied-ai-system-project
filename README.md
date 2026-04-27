@@ -156,3 +156,7 @@ python -m src.main
 ## Screenshots of Program Output
 ![Output 1](assets/output1.jpg)
 ![Output 2](assets/output2.jpg)
+
+## System Architecture
+
+![System Diagram](assets/image.png)
