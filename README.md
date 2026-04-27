@@ -152,3 +152,6 @@ Because: Genre match (+2.0), Mood match (+1.5), Energy similarity (0.98)
 
 ## How to Run
 python -m src.main
+
+![Output 1](assets/output1.jpg)
+![Output 2](assets/output2.jpg)
