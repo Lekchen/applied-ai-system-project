@@ -130,23 +130,25 @@ This experiment shows that mood plays a significant role in improving recommenda
    source .venv/bin/activate      # Mac or Linux
    .venv\Scripts\activate         # Windows
   
+# AI Music Recommender System
+
 ## Project Description
-This project is an AI music recommender system that suggests songs based on user preferences such as genre, mood, and energy level. The system analyzes song features and ranks recommendations using a scoring function.
+This project is an AI music recommender system that suggests songs based on user preferences such as genre, mood, and energy level.
 
 ## How It Works
-The system uses a scoring function that compares user preferences with song attributes. It assigns weights to genre, mood, and energy similarity to calculate a score for each song. The songs are then sorted and the top recommendations are returned.
+The system compares user preferences with song attributes and calculates a score based on:
+- Genre match
+- Mood match
+- Energy similarity
+
+Songs are ranked by score and the top results are returned.
 
 ## AI Feature
-This system uses a multi-factor scoring algorithm that evaluates songs based on genre, mood, and energy similarity. It also provides explanations for each recommendation, making the system transparent and interpretable.
+This system uses a multi-factor scoring algorithm and provides explanations for each recommendation, making the system transparent and interpretable.
 
 ## Example Output
-Song: Focus Flow  
-Score: 3.00  
-Because: Genre match (+2.0), Energy similarity (0.95)
+Midnight Coding - Score: 5.46  
+Because: Genre match (+2.0), Mood match (+1.5), Energy similarity (0.98)
 
 ## How to Run
-1. Install dependencies:
-   pip install -r requirements.txt
-
-2. Run the program:
-   python -m src.main
+python -m src.main
