@@ -214,7 +214,9 @@ I used a multi-factor scoring system because it allows the recommender to consid
 
 ## Testing Summary
 
-The system was tested using multiple user profiles and edge cases. The scoring function consistently ranked relevant songs higher when genre and mood matched. One limitation is that when no genre or mood matches are found, the system relies mainly on energy similarity. This showed that the dataset size and diversity affect recommendation quality.
+The system was tested using multiple user profiles and edge cases. All tests passed, and the scoring function consistently ranked songs higher when genre and mood matched user preferences. The system performed well across different inputs, but when no genre or mood match was found, it relied mainly on energy similarity.
+
+Overall, the recommender produced accurate and consistent results, showing that the scoring logic works as intended.
 
 ## Reflection
 
