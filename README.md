@@ -160,3 +160,62 @@ python -m src.main
 ## System Architecture
 
 ![System Diagram](assets/image.png)
+
+## Original Project
+
+This project is based on my Module 3 project: **AI Music Recommender Simulation**.  
+The original system recommended songs based on user preferences such as genre, mood, and energy level. It used a basic scoring function to rank songs but had limited explanation and structure.
+
+## Title and Summary
+
+This project is an AI Music Recommender System that suggests songs based on user preferences such as genre, mood, and energy. It uses a multi-factor scoring system and provides explanations for each recommendation. This helps users understand why certain songs are recommended and improves transparency.
+
+## Architecture Overview
+
+The system consists of several components: user input, a recommender system, a scoring function, and a ranking system. User preferences and song data are processed through the scoring function, which evaluates genre, mood, and energy similarity. The system then ranks songs and outputs the top recommendations along with explanations. A testing system is included to validate the scoring logic.
+
+## Setup Instructions
+
+1. Clone the repository:
+   git clone <your-repo-link>
+
+2. Navigate to the project folder:
+   cd applied-ai-system-project
+
+3. Install dependencies:
+   pip install -r requirements.txt
+
+4. Run the program:
+   python -m src.main
+
+## Sample Interactions
+
+### User 1 (Lofi Chill)
+Input:
+genre = lofi, mood = chill, energy = 0.4  
+
+Output:
+Midnight Coding - Score: 5.46  
+Because: Genre match (+2.0), Mood match (+1.5), Energy similarity (0.98)
+
+---
+
+### User 2 (High Energy Pop)
+Input:
+genre = pop, mood = happy, energy = 0.9  
+
+Output:
+Sunrise City - Score: 5.34  
+Because: Genre match (+2.0), Mood match (+1.5), Energy similarity (0.92)
+
+## Design Decisions
+
+I used a multi-factor scoring system because it allows the recommender to consider multiple aspects of user preferences. I assigned higher weights to genre and mood because they are more important for music preference, while energy similarity provides fine-tuning. A trade-off is that the system relies on exact matches for genre and mood, which may limit recommendations if the dataset is small.
+
+## Testing Summary
+
+The system was tested using multiple user profiles and edge cases. The scoring function consistently ranked relevant songs higher when genre and mood matched. One limitation is that when no genre or mood matches are found, the system relies mainly on energy similarity. This showed that the dataset size and diversity affect recommendation quality.
+
+## Reflection
+
+This project helped me understand how AI systems use data and logic to make decisions. I learned how to design scoring algorithms, explain AI outputs, and structure a system clearly. It also showed me the importance of testing and making AI systems transparent and understandable.
